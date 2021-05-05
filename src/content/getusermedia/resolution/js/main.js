@@ -68,8 +68,11 @@ const vgaConstraints = {
 };
 
 const hdConstraints = {
-    video: { width: { exact: 1280 }, height: { exact: 720 } },
-    frameRate: { min: 15, ideal: 60, max: 60 },
+    video: {
+        width: { exact: 1280 },
+        height: { exact: 720 },
+        frameRate: { min: 15, ideal: 60, max: 60 },
+    },
 };
 
 const fullHdConstraints = {
