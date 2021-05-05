@@ -73,13 +73,19 @@ const hdConstraints = {
 };
 
 const fullHdConstraints = {
-    video: { width: { exact: 1920 }, height: { exact: 1080 } },
-    frameRate: { min: 15, ideal: 60, max: 60 },
+    video: {
+        width: { exact: 1920 },
+        height: { exact: 1080 },
+        frameRate: { min: 15, ideal: 60, max: 60 },
+    },
 };
 
 const televisionFourKConstraints = {
-    video: { width: { exact: 3840 }, height: { exact: 2160 } },
-    frameRate: { min: 15, ideal: 60, max: 60 },
+    video: {
+        width: { exact: 3840 },
+        height: { exact: 2160 },
+        frameRate: { min: 15, ideal: 60, max: 60 },
+    },
 };
 
 const cinemaFourKConstraints = {
