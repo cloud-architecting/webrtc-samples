@@ -15,11 +15,13 @@ let stream;
 const vgaButton = document.querySelector("#vga");
 const qvgaButton = document.querySelector("#qvga");
 const hdButton = document.querySelector("#hd");
-const testButton = document.querySelector("#test");
 const fullHdButton = document.querySelector("#full-hd");
 const cinemaFourKButton = document.querySelector("#cinemaFourK");
 const televisionFourKButton = document.querySelector("#televisionFourK");
 const eightKButton = document.querySelector("#eightK");
+
+const testHDFPSLimitButton = document.querySelector("#testHDFPSLimit");
+const test4KFPSLimitButton = document.querySelector("#test4KFPSLimit");
 
 const videoblock = document.querySelector("#videoblock");
 const messagebox = document.querySelector("#errormessage");
@@ -42,10 +44,6 @@ qvgaButton.onclick = () => {
 
 hdButton.onclick = () => {
     getMedia(hdConstraints);
-};
-
-testButton.onclick = () => {
-    getMedia(testConstraints);
 };
 
 fullHdButton.onclick = () => {
@@ -72,20 +70,20 @@ const vgaConstraints = {
     video: { width: { exact: 640 }, height: { exact: 480 } },
 };
 
+testHDFPSLimitButton.onclick = () => {
+    getMedia(testHDFPSLimitConstraints);
+};
+
+test4KFPSLimitButton.onclick = () => {
+    getMedia(test4KFPSLimitConstraints);
+};
+
 const hdConstraints = {
     video: {
         width: { exact: 1280 },
         height: { exact: 720 },
         // frameRate: { min: 15, ideal: 60, max: 60 },
         frameRate: { max: 15 },
-    },
-};
-
-const testConstraints = {
-    video: {
-        width: { exact: 1280 },
-        height: { exact: 720 },
-        frameRate: { min: 15, ideal: 60, max: 60 },
     },
 };
 
@@ -111,6 +109,22 @@ const cinemaFourKConstraints = {
 
 const eightKConstraints = {
     video: { width: { exact: 7680 }, height: { exact: 4320 } },
+};
+
+const testHDFPSLimitConstraints = {
+    video: {
+        width: { exact: 1280 },
+        height: { exact: 720 },
+        frameRate: { min: 15, ideal: 60, max: 60 },
+    },
+};
+
+const test4KFPSLimitConstraints = {
+    video: {
+        width: { exact: 3840 },
+        height: { exact: 2160 },
+        frameRate: { max: 10 },
+    },
 };
 
 function gotStream(mediaStream) {
